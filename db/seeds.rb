@@ -9,13 +9,22 @@
 #   end
 
 
-User.create!(
-  first_name: "Cristiano",
-  last_name: "Souza",
-  username: "ltianosouzal",
-  email: "lcristianosouzal@gmail.com",
-  password_digest: "1234567890000",
+# db/seeds.rb
+puts "========= Creating default user ========="
+User.create!({
+  first_name: "userdefault",
+  last_name: "userdefault",
+  username: "userdefault",
+  email: "userdefault@exercise.com",
+  password: "1234567890000",
   password_confirmation: "1234567890000",
   role: "Admin"
-)
-puts "User Admin created!"
+})
+puts "========= User created! ========="
+
+puts "========= Generating token for default user ========="
+user = User.find_by(username: "ltianosouzal")
+token = encode_token(user_id: user.id)
+
+puts "Token for #{user.username}: #{token} generated!"
+
