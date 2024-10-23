@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
-  # before_action :authorize, only: [:index]
+  before_action :authorize, only: [:index]
+
   def index
     @users = User.all
     render json: @users
   end
 
   def create
-    puts "Received params: #{params.inspect}" # Debugging line
-
     @user = User.new(user_params)
 
     if @user.save
@@ -19,8 +18,6 @@ class UsersController < ApplicationController
   end
 
   def sign_in
-    puts "Received params: #{params.inspect}"
-
     if user_params[:username].blank? || user_params[:password].blank?
       return render json: { error: "Username and password are required" }, status: :unprocessable_entity
     end

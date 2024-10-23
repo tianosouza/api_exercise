@@ -1,7 +1,8 @@
 version: "3"
 
 services:
-  db:
+  api-exercise-db:
+    container_name: api-exercise-db
     image: postgres
     restart: always
     ports:
@@ -15,7 +16,8 @@ services:
     networks:
       - app-network
   
-  web:
+  api-exercise:
+    container_name: api-exercise
     build:
       context: .
       dockerfile: Dockerfile
@@ -25,7 +27,7 @@ services:
     ports:
       - "4000:4000"
     depends_on:
-      - db
+      - api-exercise-db
     networks:
       - app-network
 
