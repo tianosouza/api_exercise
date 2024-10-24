@@ -27,4 +27,3 @@ user = User.find_by(username: "ltianosouzal")
 token = encode_token(user_id: user.id)
 
 puts "Token for #{user.username}: #{token} generated!"
-
