@@ -23,3 +23,5 @@ group :development, :test do
   gem "foreman", "~> 0.88.1"
   gem "faker", "~> 3.5"
 end
+
+gem "importmap-rails", "~> 2.0"
