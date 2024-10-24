@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   api-exercise-db:
     container_name: api-exercise-db
