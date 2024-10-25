@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :username, :email
+  attributes :id, :first_name, :last_name, :username, :email, :role
 
   # Vide specification
   # belongs_to :object do
