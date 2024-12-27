@@ -9,7 +9,7 @@ gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem "rack-cors", "~> 2.0"
-gem "jwt", "~> 2.9"
+gem "jwt", "~> 2.10"
 gem "active_model_serializers", "~> 0.10.14"
 
 group :development, :test do
